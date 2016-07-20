@@ -10,7 +10,7 @@
   <body ng-app="app">
     <div class="container" ng-controller="FormController">
       <h2>Contact Us</h2>
-        <form class="form" ng-submit="submitForm">
+        <form class="form" ng-submit="submitForm(form)">
           Name
           <input type="text" placeholder="Sally Smith" class="text input" ng-model="form.name">
           {{form.name}}<br>
@@ -21,11 +21,23 @@
           <input type="text" placeholder="http://mssmith.net" class="text input" ng-model="form.website">
           {{form.website}}<br>
           Message
-          <input type="textarea" placeholder="A friendly message..." class="textarea input" ng-model="form.message">
+          <textarea type="textarea" placeholder="A friendly message..." class="textarea input" ng-model="form.message"></textarea>
           {{form.message}}<br>
           <button class="button">Submit</button>
-          <hr>
         </form>
+        <hr>
+        <ul>
+          <li ng-repeat="form in formArray" data-id="{{form._id}}">
+            <div class="form-entry">
+            <h3><span class="name">{{form.name}}</span><br>
+              {{form.email}}<br>
+              {{form.website}}<br>
+              {{form.message}}
+            </h3>
+          <button ng-click="deleteMe(form._id)" class="delete-button">Delete</button>
+        </div>
+        </li>
+      </ul>
     </div>
     <script src="js/bundle.js"></script>
   </body>
