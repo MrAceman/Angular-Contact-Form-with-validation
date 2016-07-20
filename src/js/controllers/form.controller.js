@@ -9,12 +9,6 @@ function FormController ($scope, SERVER, $http) {
       $scope.formArray = res.data;
     });
   }
-// *******************************
-   
-    $scope.checkForWeb = (event)=>{
-      var pattern = /^https?:\/\//i;
-    }
-
 
   $scope.submitForm = (form) => {
     // Post takes 3 parameters. Where posting to/What you are posting

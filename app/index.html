@@ -10,19 +10,26 @@
   <body ng-app="app">
     <div class="container" ng-controller="FormController">
       <h2>Contact Us</h2>
-        <form class="form" ng-submit="submitForm(form)">
+        <form class="form" name="form" ng-submit="submitForm(form)">
+
           <h4>Name</h4>
-          <input type="text" placeholder="Sally Smith" class="text input" ng-model="form.name" required>
-          <span class="nameAlert alert">Name cannot be left empty</span><br>
+          <input type="text" name="input" placeholder="Sally Smith" class="text input" ng-model="form.name" required>
+          <span class="text alert" ng-show="form.input.$error.required">Name cannot be left empty</span><br>
+
           <h4>Email</h4>
-          <input type="email" placeholder="ssmith@gmail.com" class="text input" ng-model="form.email" required>
-          <span class="emailAlert alert">Email must container an "@"</span><br>
+          <input type="email" name="emailAdd" placeholder="ssmith@gmail.com" class="email input" ng-model="form.email" required>
+          <span class="emailAlert alert" ng-show="form.emailAdd.$error.required">Email cannot be left empty</span>
+          <span class="emailAlert alert" ng-show="form.emailAdd.$error.email">Email must contain an "@"</span><br>
+
           <h4>Website</h4>
-          <input type="url" placeholder="http://mssmith.net" class="text input" ng-model="form.website" ng-pattern="/^https?:\/\//i" required>
-          <span class="urlAlert alert">Website must begin with http:// or https://</span><br>
+          <input type="url" name="urlAdd" placeholder="http://mssmith.net" class="url input" ng-model="form.website" ng-pattern="/^https?:\/\//i" required>
+          <span class="urlAlert alert" ng-show="form.urlAdd.$error.required">Website cannot be left empty</span>
+          <span class="urlAlert alert" ng-show="form.urlAdd.$error.url">Website must begin with http:// or https://</span><br>
+
           <h4>Message</h4>
-          <textarea type="textarea" placeholder="A friendly message..." class="textarea input" ng-model="form.message" required></textarea>
-          <span class="messageAlert alert">Message cannot be left empty</span><br>
+          <textarea type="textarea" name="messageField" placeholder="A friendly message..." class="textarea input" ng-model="form.message" required></textarea>
+          <span class="messageAlert alert" ng-show="form.messageField.$error.required">Message cannot be left empty</span><br>
+
           <button class="button">Submit</button>
         </form>
         <hr>
