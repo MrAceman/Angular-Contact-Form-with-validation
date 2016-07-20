@@ -63,7 +63,13 @@ h4 {
 }
 
 .input.ng-valid {
-  background: green;
+  background: lightgreen;
+}
+
+// Pristine overwrites preceeding invalid/valid CSS rules on initial page load
+// when input field has not been touched.
+.input.ng-pristine {
+  background: white;
 }
 
 .alert {

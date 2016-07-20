@@ -1,55 +1,17 @@
-# Installation
+## AngularJS Contact Form with validation and data persistence
 
-#### Prerequisites
+This HTML, CSS, and JS was created on July 20th, 2016.  
 
-Make sure you have an up to date installation of `npm`
-with `brew update` followed by either `brew install npm` or `brew upgrade npm`.
+The goal of this project was to create an AngularJS project including form validation and data persistence.
 
-Then use npm to install the following apps with `npm install -g $APP_NAME`
-* `gulp-cli`
-* `surge`
+The primary purposes of this exercise were to:
 
-Finally, I would strongly encourage you to install the `newapp` script from [here][newapp].
+1. Understand how to do form validation using angular models.
 
-[newapp]: https://gist.github.com/kingcons/a25733c233faf10847cbb4ff557e6843
+2. Understand how to work with persistent data.
 
-# Usage
+This project has been deployed to Surge at: http://tiy-niclaswillems-angular-contact-form-with-persistence.surge.sh/
 
-#### If you are using the `newapp` tool
+If you'd like to check out more of my work, please visit my GitHub page at https://github.com/MrAceman
 
-*NOTE:* If you do not use a lowercased project/folder name, the automatic deploy to surge with `npm run deploy` will fail as surge.sh always expects lowercased names.
-
-1. Run `$ newapp template <project name>`
-2. Change in to your new project
-3. Initialize Git `$ git init`
-4. Build
-
-#### If you are NOT using the `newapp` tool
-
-1. Clone down this repo
-2. Rename and change into the project folder
-3. Remove `git` from it `$ rm -rf .git`
-4. Initialize Git `$ git init`
-5. Install the dependencies `$ npm install`
-6. Build 
-
-
-# Features
-
-This template features a couple different tools. First it utalizes both NPM and Gulp for different tasks.
-
-## Gulp Tasks
-
-All tasks are listed below, but ideally you will just need to run `gulp start` and be done with it.
-
-- `gulp start`: This is the primary task that will fire up the server and allow you to start building
-- `gulp server`: This will start a Browsersync server with live-reload
-- `gulp sass`: This will compile your SASS
-- `gulp browserify`: This will transpile your JS from ES6 to ES5
-- `gulp watch`: This will start a watcher for files
-
-## NPM Scripts
-
-- `npm run test`: This will launch Mocha in your terminal and run any tests
-- `npm run deploy`: This will deploy your application to Surge.sh for you
-- `npm run lint`: This will run ESLint on your `/src/js` folder
+If you have any questions please email me: [Niclas Willems](mailto:niclas.willems@gmail.com)

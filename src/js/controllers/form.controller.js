@@ -10,19 +10,20 @@ function FormController ($scope, SERVER, $http) {
     });
   }
 
-  $scope.submitForm = (form) => {
+  $scope.submitForm = (formData) => {
+    console.log(formData);
     // Post takes 3 parameters. Where posting to/What you are posting
-    $http.post(SERVER.URL, form).then( (res) => {
+    $http.post(SERVER.URL, formData).then( (res) => {
       // Adds form to form array
       $scope.formArray.push(res.data);
-      $scope.form = {};
+      $scope.formData = {};
     });
   }
 
   $scope.deleteMe = (id) => {
     $http.delete(SERVER.URL + id).then((res) => {
-      $scope.formArray = $scope.formArray.filter( (form) => {
-        return form._id !== id;
+      $scope.formArray = $scope.formArray.filter( (formData) => {
+        return formData._id !== id;
       });
     });
   }
