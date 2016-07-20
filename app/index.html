@@ -11,18 +11,18 @@
     <div class="container" ng-controller="FormController">
       <h2>Contact Us</h2>
         <form class="form" ng-submit="submitForm(form)">
-          Name
-          <input type="text" placeholder="Sally Smith" class="text input" ng-model="form.name">
-          {{form.name}}<br>
-          Email
-          <input type="text" placeholder="ssmith@gmail.com" class="text input" ng-model="form.email">
-          {{form.email}}<br>
-          Website
-          <input type="text" placeholder="http://mssmith.net" class="text input" ng-model="form.website">
-          {{form.website}}<br>
-          Message
-          <textarea type="textarea" placeholder="A friendly message..." class="textarea input" ng-model="form.message"></textarea>
-          {{form.message}}<br>
+          <h4>Name</h4>
+          <input type="text" placeholder="Sally Smith" class="text input" ng-model="form.name" required>
+          <span class="nameAlert alert">Name cannot be left empty</span><br>
+          <h4>Email</h4>
+          <input type="email" placeholder="ssmith@gmail.com" class="text input" ng-model="form.email" required>
+          <span class="emailAlert alert">Email must container an "@"</span><br>
+          <h4>Website</h4>
+          <input type="url" placeholder="http://mssmith.net" class="text input" ng-model="form.website" ng-pattern="/^https?:\/\//i" required>
+          <span class="urlAlert alert">Website must begin with http:// or https://</span><br>
+          <h4>Message</h4>
+          <textarea type="textarea" placeholder="A friendly message..." class="textarea input" ng-model="form.message" required></textarea>
+          <span class="messageAlert alert">Message cannot be left empty</span><br>
           <button class="button">Submit</button>
         </form>
         <hr>
